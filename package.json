@@ -3,6 +3,11 @@
   "version": "1.0.0",
   "description": "Test task",
   "main": "index.js",
+  "scripts": {
+    "dev": "webpack --mode development",
+    "start": "webpack-dev-server --mode development --open",
+    "build": "webpack --mode production"
+  },
   "author": "Evgenii Popov",
   "license": "MIT",
   "devDependencies": {
