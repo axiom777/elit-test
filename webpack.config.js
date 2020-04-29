@@ -45,27 +45,7 @@ const defaultConfig = {
       },
       {
         test: /\.less$/,
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: [
-            {
-              loader: 'css-loader',
-            },
-            {
-              loader: 'resolve-url-loader',
-              options: {
-                engine: 'rework',
-              },
-            },
-            {
-              loader: 'less-loader',
-              options: {
-                sourceMap: true,
-                sassOptions: {},
-              },
-            },
-          ],
-        }),
+        use: ExtractTextPlugin.extract(['css-loader', 'less-loader']),
       },
       {
         test: /\.pug$/,
