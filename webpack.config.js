@@ -1,8 +1,10 @@
+/*eslint no-undef: "error"*/
+/*eslint-env node*/
 const path = require('path');
-const fs = require('fs');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const webpack = require('webpack');
 
 const defaultConfig = {
   context: path.resolve(__dirname, 'src'),
@@ -30,6 +32,17 @@ const defaultConfig = {
   },
   module: {
     rules: [
+      {
+        test: /\.css$/,
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: [
+            {
+              loader: 'css-loader',
+            },
+          ],
+        }),
+      },
       {
         test: /\.less$/,
         use: ExtractTextPlugin.extract({
@@ -84,6 +97,12 @@ const defaultConfig = {
     ],
   },
   plugins: [
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery',
+      'window.jQuery': 'jquery',
+      Popper: ['popper.js', 'default'],
+    }),
     new HtmlWebpackPlugin({
       template: `./index.pug`,
       filename: `index.html`,
