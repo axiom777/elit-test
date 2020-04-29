@@ -1,14 +1,56 @@
 extends ./layout.pug
 
+mixin footerContactItem({phone, text})
+  - const phoneLink = phone.replace(/[\s-]/g, "");
+  .footer-item-contact
+    p.footer-item-contact__phone 
+      a.footer-item-contact__link(href=phoneLink)= phone
+    p.footer-item-contact__text= text
+
+mixin footerMenuItem({name,link})
+  li.footer-menu__item
+    a.footer-menu__link(href=link)= name
+
+mixin label({delivery, storage, lider, exclusive})
+  if delivery === "true"
+    .card-img__label.card-img__label_delivery Бесплатная доставка
+  if storage === "true"
+    .card-img__label.card-img__label_storage На складе
+  if lider === "true"
+    .card-img__label.card-img__label_lider Лидер продаж
+  if exclusive === "true"
+    .card-img__label.card-img__label_exclusive Эксклюзив
+
+mixin specialOffer(items)
+  .spercial
+    each item in items
+      .card
+        .card-img
+          img(src=require(`images/${item.image}`).default, alt=item.name)
+          .card-img__labels
+            +label(item)
+        .card-rating
+        .card-review= item.review
+        .card-name= item.name
+        .card-country(class=item.countryFlag)= item.country
+        .card-price= item.price
+        a.card__link(href=item.link)
+          button.card__link-button= item.buttonName
+        .card-like.js-card-like
+        .card-compare.js-card-compare
+
 mixin categories(header,items)
   .categories
-    h2.cotegories-heading=header
+    h2.cotegories-heading= header
     .categories-list
       each item in items
         .category
-          a(href=item.href).category__link
-            img(src=require(`images/${item.image}`).default, alt=item.name).category__image
-            .category__name=item.name
+          a.category__link(href=item.href)
+            img.category__image(
+              src=require(`images/${item.image}`).default,
+              alt=item.name
+            )
+            .category__name= item.name
 
 block meta
   title Branding Page
@@ -16,16 +58,15 @@ block meta
   meta(name='keywords', content='')
 
 block header
-  .header-top(style="background:#000;")
-      img(src=require("images/pure.svg").default, alt="pure")
-      img(src=require("images/grohe.svg").default, alt="grohe")
+  .header-top(style='background:#000;')
+    img(src=require("images/pure.svg").default, alt='pure')
+    img(src=require("images/grohe.svg").default, alt='grohe')
   header.header
-    a(href="/").logo
-      img(src=require("images/logo.svg").default, alt="logo")
-
+    a.logo(href='/')
+      img(src=require("images/logo.svg").default, alt='logo')
     .contact
       .phone
-        a.phone__number(href="84955653525") 8 495 565-35-25
+        a.phone__number(href='84955653525') 8 495 565-35-25
         .phone__time Каждый день с 9 до 22
       button.call-back Заказать звонок
     .heading
@@ -35,11 +76,54 @@ block slider
   .slider
 
 block content
-  - var popCategories = require("./popular-categories.json")
-  - var popCollections = require("./popular-collections.json")
+  - const popCategories = require("./popular-categories.json");
+  - const popCollections = require("./popular-collections.json");
   +categories("Популярные товарные разделы", popCategories)
   +categories("Популярные коллекции", popCollections)
-  //-+spec()
+  - const special = require("./special.json");
+  +specialOffer(special)
+  .content-text
+    h2 Дизайн - название инфоблока
+    img(src=require("images/image 14.jpg").default, style='float:left;')
+    p Grohe производит смесители и душевые гарнитуры для ванной комнаты и кухни, автоматические и электронные смесители общественного и коммерческого назначения, системы инсталляции и смыва для подвесной сантехники, системы скрытого настенного монтажа.
+    p На долю Grohe AG приходится примерно 8 % мирового рынка.
+    p В 2007 году объём продаж выпускаемой Grohe сантехнической арматуры для кухонь, ванн и душа, автоматической арматуры для коммерческого и общественного секторов, а также инсталляционных и смывных систем составил около 1,02 млрд евро.
+    p У Grohe 6 производственных площадок, две из которых находятся за рубежом, в частности в Португалии и Таиланде. Компания реализует более 82 % выпускаемой продукции за пределами Германии. По всему миру на предприятиях Grohe работает около 5000 человек.
+    hr(style='clear:both;')
+    h2 Технологии - название инфоблока 2
+    img(src=require("images/image 14.jpg").default, style='float:right;')
+    p Grohe производит смесители и душевые гарнитуры для ванной комнаты и кухни, автоматические и электронные смесители общественного и коммерческого назначения, системы инсталляции и смыва для подвесной сантехники, системы скрытого настенного монтажа.
+    p На долю Grohe AG приходится примерно 8 % мирового рынка. В 2007 году объём продаж выпускаемой Grohe сантехнической арматуры для кухонь, ванн и душа, автоматической арматуры для коммерческого и общественного секторов, а также инсталляционных и смывных систем составил около 1,02 млрд евро.
+    p У Grohe 6 производственных площадок, две из которых находятся за рубежом, в частности в Португалии и Таиланде. Компания реализует более 82 % выпускаемой продукции за пределами Германии. По всему миру на предприятиях Grohe работает около 5000 человек.
+  div(style='clear:both;')
 
+block footer
+  footer.footer
+    .footer-items
+      .footer-item 
+        h2.footer-item__header Популярные группы
+        nav.footer-menu
+          ul.footer-menu-list
+            +footerMenuItem({name:"Раковины", link:"#"})
+            +footerMenuItem({name:"Смесители", link:"#"})
+            +footerMenuItem({name:"Полотенцесушители", link:"#"})
+            +footerMenuItem({name:"Ванны", link:"#"})
+      .footer-item 
+        h2.footer-item__header Информация
+        p Интернет-магазин Сантехника-Тут является официальным дистрибьютером продуции немецкой комании Грое в России.
 
+      .footer-item 
+        h2.footer-item__header Контакты
+        .footer-item-contact
+          +footerContactItem({phone:"8 800 555-66-13", text:"Бесплатные звонки по России"})
+          +footerContactItem({phone:"8 495 565-35-25", text:"Многоканальный номер"})
+          +footerContactItem({phone:"8 812 748-28-77", text:"Офис продаж в Санкт-Петербурге"})
+          +footerContactItem({phone:"8 861 205-25-67", text:"Офис продаж в Краснодаре"})
+          +footerContactItem({phone:"8 863 322-00-18", text:"Офис продаж в Ростове-на-Дону"})
 
+      .footer-item 
+        h2.footer-item__header Продавец
+        p Сантехника-Тут
+        p ООО «Элит Групп»
+        p ОГРН 1115029005123
+        p ИНН 5029152090
