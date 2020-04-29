@@ -1,0 +1,9 @@
+mixin cardLabel({delivery, storage, lider, exclusive})
+  if delivery === "true"
+    .card-img__label.card-img__label_delivery Бесплатная доставка
+  if storage === "true"
+    .card-img__label.card-img__label_storage На складе
+  if lider === "true"
+    .card-img__label.card-img__label_lider Лидер продаж
+  if exclusive === "true"
+    .card-img__label.card-img__label_exclusive Эксклюзив

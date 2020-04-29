@@ -1,0 +1,19 @@
+include ../cardLabel/cardLabel.pug
+
+mixin specialOffer(items)
+  .spercial
+    each item in items
+      .card
+        .card-img
+          img(src=require(`images/${item.image}`).default, alt=item.name)
+          .card-img__labels
+            +cardLabel(item)
+        .card-rating
+        .card-review= item.review
+        .card-name= item.name
+        .card-country(class=item.countryFlag)= item.country
+        .card-price= item.price
+        a.card__link(href=item.link)
+          button.card__link-button= item.buttonName
+        .card-like.js-card-like
+        .card-compare.js-card-compare

@@ -1,56 +1,8 @@
 extends ./layout.pug
-
-mixin footerContactItem({phone, text})
-  - const phoneLink = phone.replace(/[\s-]/g, "");
-  .footer-item-contact
-    p.footer-item-contact__phone 
-      a.footer-item-contact__link(href=phoneLink)= phone
-    p.footer-item-contact__text= text
-
-mixin footerMenuItem({name,link})
-  li.footer-menu__item
-    a.footer-menu__link(href=link)= name
-
-mixin label({delivery, storage, lider, exclusive})
-  if delivery === "true"
-    .card-img__label.card-img__label_delivery Бесплатная доставка
-  if storage === "true"
-    .card-img__label.card-img__label_storage На складе
-  if lider === "true"
-    .card-img__label.card-img__label_lider Лидер продаж
-  if exclusive === "true"
-    .card-img__label.card-img__label_exclusive Эксклюзив
-
-mixin specialOffer(items)
-  .spercial
-    each item in items
-      .card
-        .card-img
-          img(src=require(`images/${item.image}`).default, alt=item.name)
-          .card-img__labels
-            +label(item)
-        .card-rating
-        .card-review= item.review
-        .card-name= item.name
-        .card-country(class=item.countryFlag)= item.country
-        .card-price= item.price
-        a.card__link(href=item.link)
-          button.card__link-button= item.buttonName
-        .card-like.js-card-like
-        .card-compare.js-card-compare
-
-mixin categories(header,items)
-  .categories
-    h2.cotegories-heading= header
-    .categories-list
-      each item in items
-        .category
-          a.category__link(href=item.href)
-            img.category__image(
-              src=require(`images/${item.image}`).default,
-              alt=item.name
-            )
-            .category__name= item.name
+include ./blocks/footerContactItem/footerContactItem.pug
+include ./blocks/footerMenuItem/footerMenuItem.pug
+include ./blocks/specialOffer/specialOffer.pug
+include ./blocks/categories/categories.pug
 
 block meta
   title Branding Page

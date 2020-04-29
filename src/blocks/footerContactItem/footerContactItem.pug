@@ -1,0 +1,6 @@
+mixin footerContactItem({phone, text})
+  - const phoneLink = phone.replace(/[\s-]/g, "");
+  .footer-item-contact
+    p.footer-item-contact__phone 
+      a.footer-item-contact__link(href=phoneLink)= phone
+    p.footer-item-contact__text= text
