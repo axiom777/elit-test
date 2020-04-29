@@ -1,0 +1,45 @@
+extends ./layout.pug
+
+mixin categories(header,items)
+  .categories
+    h2.cotegories-heading=header
+    .categories-list
+      each item in items
+        .category
+          a(href=item.href).category__link
+            img(src=require(`images/${item.image}`).default, alt=item.name).category__image
+            .category__name=item.name
+
+block meta
+  title Branding Page
+  meta(name='desctription', content='')
+  meta(name='keywords', content='')
+
+block header
+  .header-top(style="background:#000;")
+      img(src=require("images/pure.svg").default, alt="pure")
+      img(src=require("images/grohe.svg").default, alt="grohe")
+  header.header
+    a(href="/").logo
+      img(src=require("images/logo.svg").default, alt="logo")
+
+    .contact
+      .phone
+        a.phone__number(href="84955653525") 8 495 565-35-25
+        .phone__time Каждый день с 9 до 22
+      button.call-back Заказать звонок
+    .heading
+      h1 GROHE
+
+block slider
+  .slider
+
+block content
+  - var popCategories = require("./popular-categories.json")
+  - var popCollections = require("./popular-collections.json")
+  +categories("Популярные товарные разделы", popCategories)
+  +categories("Популярные коллекции", popCollections)
+  //-+spec()
+
+
+
