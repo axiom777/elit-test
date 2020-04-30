@@ -1,19 +1,22 @@
 include ../cardLabel/cardLabel.pug
 
 mixin specialOffer(items)
-  .spercial
+  .special
     each item in items
       .card
         .card-img
-          img(src=require(`images/${item.image}`).default, alt=item.name)
+          img.card-img__image(src=require(`images/${item.image}`).default, alt=item.name)
           .card-img__labels
             +cardLabel(item)
-        .card-rating
-        .card-review= item.review
-        .card-name= item.name
-        .card-country(class=item.countryFlag)= item.country
-        .card-price= item.price
-        a.card__link(href=item.link)
-          button.card__link-button= item.buttonName
-        .card-like.js-card-like
-        .card-compare.js-card-compare
+        .card-content
+          .card-rate
+            .card-rate__rating.js-card-rate__rating(data-rating=item.rate)
+            .card-rate__review= "Отзывов: " + item.reviewCount
+          .card-name= item.name
+          .card-country(class=`card-country__${item.countryFlag}`)= item.country
+          .card-price= item.price + " " + item.currency
+          .card-controls
+            a.card-controls__link(href=item.link)
+              button.card-controls__link-button= item.buttonName
+            .card-controls__like.js-card-controls__like
+            .card-controls__compare.js-card-controls__compare

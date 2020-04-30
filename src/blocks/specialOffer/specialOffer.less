@@ -1,0 +1,162 @@
+@import '../../less/variables.less';
+.special {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card {
+  font-size: @card-font-size;
+  max-width: calc(@container-width / 4 - 30px);
+  border-radius: @border-radius;
+  border: 1px solid @border-color;
+  transition: box-shadow 0.3s ease;
+  &:hover {
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.25);
+    transition: box-shadow 0.3s ease;
+  }
+
+  &-img {
+    border-bottom: 1px solid @border-color;
+    max-height: 310px;
+    position: relative;
+    &__image {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin: 10px auto;
+    }
+    &__labels {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: flex;
+      white-space: nowrap;
+      flex-wrap: wrap;
+    }
+    &__label {
+      font-size: @labels-font-size;
+      color: #ffffff;
+      background: @bg-second-color;
+      border-radius: 5px;
+      padding: 3px 10px;
+      margin: 5px;
+      &_delivery {
+        background: @label-delivery;
+      }
+      &_lider {
+        background: @label-lider;
+      }
+      &_storage {
+        background: @label-storage;
+      }
+      &_exclusive {
+        background: @label-exclusive;
+      }
+    }
+  }
+
+  &-content {
+    padding: @padding-card;
+  }
+
+  &-rate {
+    display: flex;
+    margin-bottom: 10px;
+    &__review {
+      margin-left: 10px;
+      color: @review-color;
+      border-bottom: 1px dashed @review-color;
+      line-height: 16px;
+    }
+  }
+  &-name {
+    min-height: 78px;
+  }
+  &-country {
+    display: flex;
+    border-bottom: 1px solid @border-color;
+    padding: 10px 0;
+    &:before {
+      height: 16px;
+      width: 16px;
+      margin-right: 10px;
+    }
+    &__czech:before {
+      content: '';
+      background: url('../../images/flags/cz.png');
+    }
+    &__switz::before {
+      content: '';
+      background: url('../../images/flags/ch.png');
+    }
+    &__turk::before {
+      content: '';
+      background: url('../../images/flags/tr.png');
+    }
+    &__rus::before {
+      content: '';
+      background: url('../../images/flags/ru.png');
+    }
+  }
+  &-price {
+    font-size: @price-font-size;
+    line-height: calc(@price-font-size*2);
+  }
+  &-controls {
+    display: flex;
+    justify-content: space-between;
+    height: 40px;
+    align-items: center;
+    &__link {
+      &-button {
+        font-size: 13px;
+        max-height: 40px;
+        line-height: 40px;
+      }
+    }
+    &__like {
+      display: block;
+      margin-left: auto;
+      margin-right: 10px;
+      height: 24px;
+      width: 24px;
+      cursor: pointer;
+      background: url('../../images/icons/heart_empty.svg');
+      background-size: cover;
+      &:hover {
+        background: url('../../images/icons/heart_outline.svg');
+      }
+      &_active {
+        background: url('../../images/icons/heart_fill.svg');
+        &:hover {
+          background: url('../../images/icons/heart_fill.svg');
+        }
+      }
+    }
+    &__compare {
+      display: block;
+      height: 24px;
+      width: 27px;
+      cursor: pointer;
+      background: url('../../images/icons/scale_empty.svg');
+      background-size: cover;
+      &:hover {
+        background: url('../../images/icons/scale_outline.svg');
+      }
+      &_active {
+        background: url('../../images/icons/scale_outline.svg');
+      }
+    }
+  }
+}
+.star {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin-right: 5px;
+  background: url('../../images/icons/star_empty.svg');
+  &_active {
+    background: url('../../images/icons/star_fill.svg');
+  }
+}

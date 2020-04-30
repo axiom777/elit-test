@@ -1,0 +1,35 @@
+@import './variables.less';
+html body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+h2 {
+  color: @heading-color;
+  font-size: @heading-font-size;
+}
+hr {
+  margin: 65px 0 34px;
+  padding: 0;
+  height: 0;
+  border-bottom: 1px solid @border-color;
+}
+button {
+  color: @button-color;
+  border: 1px solid @button-color;
+  border-radius: @button-border-raduis;
+  background: @bg-color;
+  padding: 0 10px;
+  max-height: 33px;
+  line-height: 33px;
+  transition: all 0.2s ease;
+  &:hover {
+    color: @bg-color;
+    background: @button-color;
+    transition: all 0.2s ease;
+  }
+  cursor: pointer;
+}
+.clear {
+  clear: both;
+}

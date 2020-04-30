@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="26" height="23" viewBox="0 0 26 23"><style id="stylish-1" class="stylish" type="text/css">.swap:hover {
+    transform: rotate(180deg);
+    transition: 200ms;
+}
+.swap{
+    transition: 200ms;
+}
+.calc .popular div.items .item:hover {
+    animation-name: bloop;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes bloop {
+    from {
+        border:1px;
+    	
+        }
+    to {
+		border:1px;
+        }
+}</style>
+  <metadata><?xpacket begin="﻿" id="W5M0MpCehiHzreSzNTczkc9d"?>
+<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.6-c140 79.160451, 2017/05/06-01:08:21        ">
+   <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <rdf:Description rdf:about=""/>
+   </rdf:RDF>
+</x:xmpmeta>
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                           
+<?xpacket end="w"?></metadata>
+<defs>
+    <style>
+      .cls-1 {
+        fill: #6f7379;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="Shape_1_копия" data-name="Shape 1 копия" class="cls-1" d="M445.2,2708.7H434.8a0.65,0.65,0,1,0,0,1.3h10.4A0.65,0.65,0,0,0,445.2,2708.7Zm3.9-18.45-2.473.01-5.977-1.19v-1.42a0.65,0.65,0,1,0-1.3,0v1.42l-5.85,1.18h-2.6a0.65,0.65,0,1,0,0,1.3l2.727-.01,5.723-1.15v16.36a0.65,0.65,0,1,0,1.3,0v-16.36l5.85,1.16h2.6A0.65,0.65,0,0,0,449.1,2690.25Zm-18.2,2.6c-1.3.65-3.9,8.31-3.9,9.75s1.746,2.6,3.9,2.6,3.9-1.16,3.9-2.6S432.2,2693.5,430.9,2692.85Zm0,11.05c-1.587,0-2.6-.77-2.6-1.3a34.133,34.133,0,0,1,2.6-7.6,34.133,34.133,0,0,1,2.6,7.6C433.5,2703.13,432.486,2703.9,430.9,2703.9Zm18.2-11.05c-1.3.65-3.9,8.31-3.9,9.75s1.746,2.6,3.9,2.6,3.9-1.16,3.9-2.6S450.4,2693.5,449.1,2692.85Zm0,11.05c-1.587,0-2.6-.77-2.6-1.3a34.186,34.186,0,0,1,2.6-7.6,34.081,34.081,0,0,1,2.6,7.6C451.7,2703.13,450.687,2703.9,449.1,2703.9Z" transform="translate(-427 -2687)"/>
+</svg>

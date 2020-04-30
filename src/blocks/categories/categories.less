@@ -1,0 +1,35 @@
+@import '../../less/variables.less';
+
+.categories {
+  &-heading {
+    font-size: @heading-font-size;
+    color: @heading-color;
+    text-align: center;
+  }
+  &-list {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+.category {
+  &:hover &-image__image {
+    transition: 0.3s ease;
+    transform: scale(1.1);
+  }
+  &__link {
+    text-decoration: none;
+    color: #ffffff;
+  }
+  &-image {
+    overflow: hidden;
+    &__image {
+      transition: 0.3s ease;
+      display: block;
+    }
+  }
+  &__name {
+    background: @bg-second-color;
+    text-align: center;
+    line-height: 43px;
+  }
+}

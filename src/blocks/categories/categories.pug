@@ -1,13 +1,13 @@
 mixin categories(header,items)
   .categories
-    h2.cotegories-heading= header
+    h2.categories-heading= header
     .categories-list
       each item in items
         .category
           a.category__link(href=item.href)
-            img.category__image(
-              src=require(`images/${item.image}`).default,
-              alt=item.name
-            )
+            .category-image
+              img.category-image__image(
+                src=require(`images/${item.image}`).default,
+                alt=item.name
+              )
             .category__name= item.name
-
