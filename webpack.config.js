@@ -5,6 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const webpack = require('webpack');
+const autoprefixer = require('autoprefixer');
 
 const defaultConfig = {
   context: path.resolve(__dirname, 'src'),
@@ -45,7 +46,17 @@ const defaultConfig = {
       },
       {
         test: /\.less$/,
-        use: ExtractTextPlugin.extract(['css-loader', 'less-loader']),
+        use: ExtractTextPlugin.extract([
+          { loader: 'css-loader' },
+          {
+            loader: 'postcss-loader',
+            options: {
+              plugins: [autoprefixer()],
+              sourceMap: true,
+            },
+          },
+          { loader: 'less-loader' },
+        ]),
       },
       {
         test: /\.pug$/,
