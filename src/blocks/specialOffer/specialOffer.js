@@ -12,16 +12,24 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  const like = document.querySelectorAll('.js-card-controls__like')
-  const compare = document.querySelectorAll('.js-card-controls__compare')
-  like.forEach(item => {
-    item.addEventListener('click', () =>{
-      item.classList.toggle('card-controls__like_active')
-    })
-  })
-  compare.forEach(item => {
-    item.addEventListener('click', () =>{
-      item.classList.toggle('card-controls__compare_active')
-    })
-  })
+  const like = document.querySelectorAll('.js-card-controls__like');
+  const compare = document.querySelectorAll('.js-card-controls__compare');
+  like.forEach((item) => {
+    item.addEventListener('click', () => {
+      if (item.classList.contains('card-controls__like_active')) {
+        item.classList.remove('card-controls__like_active');
+      } else {
+        item.classList.add('card-controls__like_active');
+      }
+    });
+  });
+  compare.forEach((item) => {
+    item.addEventListener('click', () => {
+      if (item.classList.contains('card-controls__compare_active')) {
+        item.classList.remove('card-controls__compare_active');
+      } else {
+        item.classList.add('card-controls__compare_active');
+      }
+    });
+  });
 });
