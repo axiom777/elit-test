@@ -219,7 +219,8 @@ hr {
   height: 0;
   border-bottom: 1px solid #e0e0e0;
 }
-button {
+button,
+.btn {
   color: #00a6df;
   border: 1px solid #00a6df;
   border-radius: 5px;
@@ -232,7 +233,8 @@ button {
   transition: all 0.2s ease;
   cursor: pointer;
 }
-button:hover {
+button:hover,
+.btn:hover {
   color: #ffffff;
   background: #00a6df;
   -webkit-transition: all 0.2s ease;
