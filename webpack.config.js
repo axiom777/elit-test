@@ -6,6 +6,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const webpack = require('webpack');
 const autoprefixer = require('autoprefixer');
+const ImageminPlugin = require('imagemin-webpack');
 
 const defaultConfig = {
   context: path.resolve(__dirname, 'src'),
@@ -101,6 +102,30 @@ const defaultConfig = {
     }),
     new CleanWebpackPlugin(),
     new ExtractTextPlugin('[name].css'),
+    new ImageminPlugin({
+      bail: false, // Ignore errors on corrupted images
+      cache: true,
+      imageminOptions: {
+        // Before using imagemin plugins make sure you have added them in `package.json` (`devDependencies`) and installed them
+
+        // Lossless optimization with custom option
+        // Feel free to experiment with options for better result for you
+        plugins: [
+          ['jpegtran', { progressive: true }],
+          ['optipng', { optimizationLevel: 5 }],
+          [
+            'svgo',
+            {
+              plugins: [
+                {
+                  removeViewBox: false,
+                },
+              ],
+            },
+          ],
+        ],
+      },
+    }),
   ],
 };
 module.exports = defaultConfig;
