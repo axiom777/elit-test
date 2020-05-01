@@ -1,7 +1,10 @@
 {
   "name": "elit-group",
   "version": "1.0.0",
-  "browserslist": ["last 4 version", "IE >=8"],
+  "browserslist": [
+    "last 4 version",
+    "IE >=8"
+  ],
   "description": "Test task",
   "main": "index.js",
   "scripts": {
@@ -23,6 +26,10 @@
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "file-loader": "^6.0.0",
     "html-webpack-plugin": "^4.2.1",
+    "imagemin-jpegtran": "^6.0.0",
+    "imagemin-optipng": "^7.1.0",
+    "imagemin-svgo": "^7.1.0",
+    "imagemin-webpack": "^5.1.1",
     "less": "^3.11.1",
     "less-loader": "^6.0.0",
     "popper.js": "^1.16.1",
