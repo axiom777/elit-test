@@ -9,7 +9,7 @@
 .card {
   font-size: @card-font-size;
   box-sizing: border-box;
-  width: 290px;
+  min-width: 290px;
   border-radius: @border-radius;
   border: 1px solid @border-color;
   transition: box-shadow 0.3s ease;
@@ -20,7 +20,7 @@
 
   &-img {
     border-bottom: 1px solid @border-color;
-    max-height: 310px;
+    min-height: 310px;
     position: relative;
     &__image {
       display: block;

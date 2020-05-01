@@ -1,3 +1,4 @@
+extends ./layout.pug
 include ./blocks/footerMenuItem/footerMenuItem.pug
 include ./blocks/specialOffer/specialOffer.pug
 include ./blocks/categories/categories.pug
@@ -14,11 +15,13 @@ block header
       .container.header-top-container
         img.header-top__image(
           src=require("images/icons/pure.svg").default,
-          alt='pure'
+          alt='pure',
+          style='height:30px; '
         )
         img.header-top__image(
           src=require("images/icons/grohe.svg").default,
-          alt='grohe'
+          alt='grohe',
+          style='height:71px; '
         )
     .container
       .header-bottom
@@ -34,42 +37,37 @@ block header
 
 block slider
   .slider.owl-carousel
-    img(src=require("./images/rotator.jpg").default).slider__image
-    img(src=require("./images/rotator.jpg").default).slider__image
-    img(src=require("./images/rotator.jpg").default).slider__image
-    img(src=require("./images/rotator.jpg").default).slider__image
+    img.slider__image(src=require("./images/rotator.jpg").default)
+    img.slider__image(src=require("./images/rotator.jpg").default)
+    img.slider__image(src=require("./images/rotator.jpg").default)
+    img.slider__image(src=require("./images/rotator.jpg").default)
 
 block content
   .content
-    main.container
-      - const popCategories = require("./popular-categories.json");
-      - const popCollections = require("./popular-collections.json");
-      +categories("Популярные товарные разделы", popCategories)
-      +categories("Популярные коллекции", popCollections)
-      - const special = require("./special.json");
-      +specialOffer(special)
-      .content-text
-        h2 Дизайн - название инфоблока
-        .content-text-image.content-text-image_left
-          img(
-            src=require("images/image 14.jpg").default,
-            alt='img',
-          )
-        p Grohe производит смесители и душевые гарнитуры для ванной комнаты и кухни, автоматические и электронные смесители общественного и коммерческого назначения, системы инсталляции и смыва для подвесной сантехники, системы скрытого настенного монтажа.
-        p На долю Grohe AG приходится примерно 8 % мирового рынка.
-        p В 2007 году объём продаж выпускаемой Grohe сантехнической арматуры для кухонь, ванн и душа, автоматической арматуры для коммерческого и общественного секторов, а также инсталляционных и смывных систем составил около 1,02 млрд евро.
-        p У Grohe 6 производственных площадок, две из которых находятся за рубежом, в частности в Португалии и Таиланде. Компания реализует более 82 % выпускаемой продукции за пределами Германии. По всему миру на предприятиях Grohe работает около 5000 человек.
-        .clear
-        hr(style='color:#eeeeee')
-        h2 Технологии - название инфоблока 2
-        .content-text-image.content-text-image_right
-          img(
-            src=require("images/image 14.jpg").default,
-            alt='img',
-          )
-        p Grohe производит смесители и душевые гарнитуры для ванной комнаты и кухни, автоматические и электронные смесители общественного и коммерческого назначения, системы инсталляции и смыва для подвесной сантехники, системы скрытого настенного монтажа.
-        p На долю Grohe AG приходится примерно 8 % мирового рынка. В 2007 году объём продаж выпускаемой Grohe сантехнической арматуры для кухонь, ванн и душа, автоматической арматуры для коммерческого и общественного секторов, а также инсталляционных и смывных систем составил около 1,02 млрд евро.
-        p У Grohe 6 производственных площадок, две из которых находятся за рубежом, в частности в Португалии и Таиланде. Компания реализует более 82 % выпускаемой продукции за пределами Германии. По всему миру на предприятиях Grohe работает около 5000 человек.
+    main
+      .container
+        - const popCategories = require("./popular-categories.json");
+        - const popCollections = require("./popular-collections.json");
+        +categories("Популярные товарные разделы", popCategories)
+        +categories("Популярные коллекции", popCollections)
+        - const special = require("./special.json");
+        +specialOffer(special)
+        .content-text
+          h2 Дизайн - название инфоблока
+          .content-text-image.content-text-image_left
+            img(src=require("images/image 14.jpg").default, alt='img')
+          p Grohe производит смесители и душевые гарнитуры для ванной комнаты и кухни, автоматические и электронные смесители общественного и коммерческого назначения, системы инсталляции и смыва для подвесной сантехники, системы скрытого настенного монтажа.
+          p На долю Grohe AG приходится примерно 8 % мирового рынка.
+          p В 2007 году объём продаж выпускаемой Grohe сантехнической арматуры для кухонь, ванн и душа, автоматической арматуры для коммерческого и общественного секторов, а также инсталляционных и смывных систем составил около 1,02 млрд евро.
+          p У Grohe 6 производственных площадок, две из которых находятся за рубежом, в частности в Португалии и Таиланде. Компания реализует более 82 % выпускаемой продукции за пределами Германии. По всему миру на предприятиях Grohe работает около 5000 человек.
+          .clear
+          hr(style='color:#eeeeee')
+          h2 Технологии - название инфоблока 2
+          .content-text-image.content-text-image_right
+            img(src=require("images/image 14.jpg").default, alt='img')
+          p Grohe производит смесители и душевые гарнитуры для ванной комнаты и кухни, автоматические и электронные смесители общественного и коммерческого назначения, системы инсталляции и смыва для подвесной сантехники, системы скрытого настенного монтажа.
+          p На долю Grohe AG приходится примерно 8 % мирового рынка. В 2007 году объём продаж выпускаемой Grohe сантехнической арматуры для кухонь, ванн и душа, автоматической арматуры для коммерческого и общественного секторов, а также инсталляционных и смывных систем составил около 1,02 млрд евро.
+          p У Grohe 6 производственных площадок, две из которых находятся за рубежом, в частности в Португалии и Таиланде. Компания реализует более 82 % выпускаемой продукции за пределами Германии. По всему миру на предприятиях Grohe работает около 5000 человек.
 
 block footer
   .clear

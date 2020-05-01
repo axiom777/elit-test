@@ -7,6 +7,8 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const webpack = require('webpack');
 const autoprefixer = require('autoprefixer');
 const ImageminPlugin = require('imagemin-webpack');
+const isDev = process.env.NODE_ENV === 'development' ? true : false;
+console.log(process.env.NODE_ENV);
 
 const defaultConfig = {
   context: path.resolve(__dirname, 'src'),
@@ -72,7 +74,7 @@ const defaultConfig = {
         loader: 'file-loader',
         options: {
           name: '[name].[ext]',
-          publicPath: '/img/',
+          publicPath: isDev ? '/img/': '/elit-test/img/',
           outputPath: 'img/',
         },
       },
