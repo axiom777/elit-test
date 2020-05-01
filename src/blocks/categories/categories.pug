@@ -1,7 +1,7 @@
 mixin categories(header,items)
   .categories
     h2.categories-heading= header
-    .categories-list
+    .categories-list.owl-carousel
       each item in items
         .category
           a.category__link(href=item.href)

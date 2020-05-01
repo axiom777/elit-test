@@ -1,5 +1,6 @@
 @import '../../less/variables.less';
 .special {
+  overflow: hidden;
   margin-top: 30px;
   display: flex;
   justify-content: space-between;
@@ -7,7 +8,8 @@
 
 .card {
   font-size: @card-font-size;
-  max-width: calc(@container-width / 4 - 30px);
+  box-sizing: border-box;
+  width: 290px;
   border-radius: @border-radius;
   border: 1px solid @border-color;
   transition: box-shadow 0.3s ease;

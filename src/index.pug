@@ -1,8 +1,7 @@
-extends ./layout.pug
-include ./blocks/footerContactItem/footerContactItem.pug
 include ./blocks/footerMenuItem/footerMenuItem.pug
 include ./blocks/specialOffer/specialOffer.pug
 include ./blocks/categories/categories.pug
+include ./blocks/footerContactItem/footerContactItem.pug
 
 block meta
   title Branding Page
@@ -21,19 +20,24 @@ block header
           src=require("images/icons/grohe.svg").default,
           alt='grohe'
         )
-    .header-bottom.container
-      a.logo(href='/')
-        img(src=require("images/icons/logo.svg").default, alt='logo')
-      .header-bottom-contact
-        .header-bottom-contact-phone
-          a.header-bottom-contact-phone__number(href='tel:84955653525') 8 495 565-35-25
-          .header-bottom-contact-phone__time Каждый день с 9 до 22
-        button.header-bottom-contact__call-back Заказать звонок
-      .heading
-        h1 GROHE
+    .container
+      .header-bottom
+        a.header-bottom-logo(href='/')
+          img(src=require("images/icons/logo.svg").default, alt='logo')
+        .header-bottom-contact
+          .header-bottom-contact-phone
+            a.header-bottom-contact-phone__number(href='tel:84955653525') 8 495 565-35-25
+            .header-bottom-contact-phone__time Каждый день с 9 до 22
+          button.header-bottom-contact__call-back Заказать звонок
+        .heading
+          h1 GROHE
 
 block slider
-  .slider
+  .slider.owl-carousel
+    img(src=require("./images/rotator.jpg").default).slider__image
+    img(src=require("./images/rotator.jpg").default).slider__image
+    img(src=require("./images/rotator.jpg").default).slider__image
+    img(src=require("./images/rotator.jpg").default).slider__image
 
 block content
   .content
@@ -46,23 +50,29 @@ block content
       +specialOffer(special)
       .content-text
         h2 Дизайн - название инфоблока
-        img(src=require("images/image 14.jpg").default, style='float:left;')
-        div(style="padding-right: 0;")
-          p Grohe производит смесители и душевые гарнитуры для ванной комнаты и кухни, автоматические и электронные смесители общественного и коммерческого назначения, системы инсталляции и смыва для подвесной сантехники, системы скрытого настенного монтажа.
-          p На долю Grohe AG приходится примерно 8 % мирового рынка.
-          p В 2007 году объём продаж выпускаемой Grohe сантехнической арматуры для кухонь, ванн и душа, автоматической арматуры для коммерческого и общественного секторов, а также инсталляционных и смывных систем составил около 1,02 млрд евро.
-          p У Grohe 6 производственных площадок, две из которых находятся за рубежом, в частности в Португалии и Таиланде. Компания реализует более 82 % выпускаемой продукции за пределами Германии. По всему миру на предприятиях Grohe работает около 5000 человек.
+        .content-text-image.content-text-image_left
+          img(
+            src=require("images/image 14.jpg").default,
+            alt='img',
+          )
+        p Grohe производит смесители и душевые гарнитуры для ванной комнаты и кухни, автоматические и электронные смесители общественного и коммерческого назначения, системы инсталляции и смыва для подвесной сантехники, системы скрытого настенного монтажа.
+        p На долю Grohe AG приходится примерно 8 % мирового рынка.
+        p В 2007 году объём продаж выпускаемой Grohe сантехнической арматуры для кухонь, ванн и душа, автоматической арматуры для коммерческого и общественного секторов, а также инсталляционных и смывных систем составил около 1,02 млрд евро.
+        p У Grohe 6 производственных площадок, две из которых находятся за рубежом, в частности в Португалии и Таиланде. Компания реализует более 82 % выпускаемой продукции за пределами Германии. По всему миру на предприятиях Grohe работает около 5000 человек.
         .clear
-        hr(style='clear:both; color:#eeeeee')
+        hr(style='color:#eeeeee')
         h2 Технологии - название инфоблока 2
-        img(src=require("images/image 14.jpg").default, style='float:right;')
-        div(style="padding-left: 0;")
-          p Grohe производит смесители и душевые гарнитуры для ванной комнаты и кухни, автоматические и электронные смесители общественного и коммерческого назначения, системы инсталляции и смыва для подвесной сантехники, системы скрытого настенного монтажа.
-          p На долю Grohe AG приходится примерно 8 % мирового рынка. В 2007 году объём продаж выпускаемой Grohe сантехнической арматуры для кухонь, ванн и душа, автоматической арматуры для коммерческого и общественного секторов, а также инсталляционных и смывных систем составил около 1,02 млрд евро.
-          p У Grohe 6 производственных площадок, две из которых находятся за рубежом, в частности в Португалии и Таиланде. Компания реализует более 82 % выпускаемой продукции за пределами Германии. По всему миру на предприятиях Grohe работает около 5000 человек.
-      div(style='clear:both;')
+        .content-text-image.content-text-image_right
+          img(
+            src=require("images/image 14.jpg").default,
+            alt='img',
+          )
+        p Grohe производит смесители и душевые гарнитуры для ванной комнаты и кухни, автоматические и электронные смесители общественного и коммерческого назначения, системы инсталляции и смыва для подвесной сантехники, системы скрытого настенного монтажа.
+        p На долю Grohe AG приходится примерно 8 % мирового рынка. В 2007 году объём продаж выпускаемой Grohe сантехнической арматуры для кухонь, ванн и душа, автоматической арматуры для коммерческого и общественного секторов, а также инсталляционных и смывных систем составил около 1,02 млрд евро.
+        p У Grohe 6 производственных площадок, две из которых находятся за рубежом, в частности в Португалии и Таиланде. Компания реализует более 82 % выпускаемой продукции за пределами Германии. По всему миру на предприятиях Grohe работает около 5000 человек.
 
 block footer
+  .clear
   footer.footer
     .container
       .footer-items
@@ -94,3 +104,4 @@ block footer
             p ООО «Элит Групп»
             p ОГРН 1115029005123
             p ИНН 5029152090
+      .footer-disclaimer Сайт носит исключительно информационный характер, и ни при каких условиях не является публичной офертой, определяемой положениями статьи 437(2)

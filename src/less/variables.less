@@ -1,6 +1,6 @@
 // Break Points
 .bp(@size,@rules) {
-  @media screen and (min-width: @size) { @rules(); }
+  @media screen and (max-width: @size) { @rules(); }
 }
 @xl: 1280px;
 @lg: 992px;
@@ -38,3 +38,4 @@
 @button-color: #00a6df;
 @review-color: #00a6df;
 @footer-color: rgba(255, 255, 255, 0.8);
+@disclaimer-color: rgba(255, 255, 255, 0.5);

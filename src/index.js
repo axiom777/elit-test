@@ -9,13 +9,22 @@ import './blocks/specialOffer/specialOffer';
 import 'owl.carousel2/dist/assets/owl.carousel.css';
 import 'owl.carousel2';
 
-$(document).ready(function(){
-  $(".owl-carousel").owlCarousel();
+$(document).ready(function () {
+  $('.owl-carousel').owlCarousel();
 });
-$('.owl-carousel').owlCarousel({
-    margin:10,
-    autoWidth:true,
-    items:4,
-    nav: true,
-    navText: ['<span class="fa fa-angle-left"></span>', '<span class="fa fa-angle-right"></span>']
-})
+$('.categories-list').owlCarousel({
+  margin: 40,
+  autoWidth: true,
+  items: 4,
+});
+
+$('.special').owlCarousel({
+  margin: 40,
+  autoWidth: true,
+  items: 4,
+});
+$('.slider').owlCarousel({
+  margin: 0,
+  autoWidth: false,
+  items: 1,
+});
