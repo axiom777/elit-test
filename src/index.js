@@ -1,3 +1,8 @@
+//IE forEach polyfill
+if (window.NodeList && !NodeList.prototype.forEach) {
+    NodeList.prototype.forEach = Array.prototype.forEach;
+}
+
 import 'owl.carousel2';
 import './less/owl.less';
 //import 'bootstrap';
