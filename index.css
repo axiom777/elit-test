@@ -1,3 +1,26 @@
+.owl-nav .disabled {
+  display: none;
+}
+.owl-prev {
+  position: absolute;
+  height: 50px;
+  width: 30px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  left: 10px;
+}
+.owl-next {
+  position: absolute;
+  height: 50px;
+  width: 30px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  right: 10px;
+}
 .container {
   max-width: 1280px;
   margin: 0 auto;
@@ -22,6 +45,8 @@
 }
 .header-top__image {
   margin: 0 20px;
+  -ms-flex-item-align: center;
+      align-self: center;
 }
 .header-bottom {
   display: -webkit-box;
@@ -443,7 +468,7 @@ button:hover {
   font-size: 0.875rem;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  width: 290px;
+  min-width: 290px;
   border-radius: 10px;
   border: 1px solid #e0e0e0;
   -webkit-transition: -webkit-box-shadow 0.3s ease;
@@ -463,7 +488,7 @@ button:hover {
 }
 .card-img {
   border-bottom: 1px solid #e0e0e0;
-  max-height: 310px;
+  min-height: 310px;
   position: relative;
 }
 .card-img__image {
