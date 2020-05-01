@@ -402,7 +402,7 @@ button:hover {
   top: 50%;
   margin-left: -40px;
   margin-top: -40px;
-  background: url(/img/owl.video.play.png) no-repeat;
+  background: url(/elit-test/img/owl.video.play.png) no-repeat;
   cursor: pointer;
   z-index: 1;
   -webkit-backface-visibility: hidden;
@@ -535,19 +535,19 @@ button:hover {
 }
 .card-country__czech:before {
   content: '';
-  background: url(/img/cz.png);
+  background: url(/elit-test/img/cz.png);
 }
 .card-country__switz::before {
   content: '';
-  background: url(/img/ch.png);
+  background: url(/elit-test/img/ch.png);
 }
 .card-country__turk::before {
   content: '';
-  background: url(/img/tr.png);
+  background: url(/elit-test/img/tr.png);
 }
 .card-country__rus::before {
   content: '';
-  background: url(/img/ru.png);
+  background: url(/elit-test/img/ru.png);
 }
 .card-price {
   font-size: 1.375rem;
@@ -577,39 +577,39 @@ button:hover {
   height: 24px;
   width: 24px;
   cursor: pointer;
-  background: url(/img/heart_empty.svg);
+  background: url(/elit-test/img/heart_empty.svg);
   background-size: cover;
 }
 .card-controls__like:hover {
-  background: url(/img/heart_outline.svg);
+  background: url(/elit-test/img/heart_outline.svg);
 }
 .card-controls__like_active {
-  background: url(/img/heart_fill.svg);
+  background: url(/elit-test/img/heart_fill.svg);
 }
 .card-controls__like_active:hover {
-  background: url(/img/heart_fill.svg);
+  background: url(/elit-test/img/heart_fill.svg);
 }
 .card-controls__compare {
   display: block;
   height: 24px;
   width: 27px;
   cursor: pointer;
-  background: url(/img/scale_empty.svg);
+  background: url(/elit-test/img/scale_empty.svg);
   background-size: cover;
 }
 .card-controls__compare:hover {
-  background: url(/img/scale_outline.svg);
+  background: url(/elit-test/img/scale_outline.svg);
 }
 .card-controls__compare_active {
-  background: url(/img/scale_outline.svg);
+  background: url(/elit-test/img/scale_outline.svg);
 }
 .star {
   display: inline-block;
   width: 16px;
   height: 16px;
   margin-right: 5px;
-  background: url(/img/star_empty.svg);
+  background: url(/elit-test/img/star_empty.svg);
 }
 .star_active {
-  background: url(/img/star_fill.svg);
+  background: url(/elit-test/img/star_fill.svg);
 }
