@@ -1,2 +1,2 @@
 # Тестовое задание на верстку
-Посмотреть готовый код можно тут https://axiom777.github.io/elit-test/
+Посмотреть build код можно тут https://axiom777.github.io/elit-test/
