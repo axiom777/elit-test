@@ -37,6 +37,13 @@ const defaultConfig = {
   module: {
     rules: [
       {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+        },
+      },
+      {
         test: /\.css$/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
@@ -74,7 +81,7 @@ const defaultConfig = {
         loader: 'file-loader',
         options: {
           name: '[name].[ext]',
-          publicPath: isDev ? '/img/': '/elit-test/img/',
+          publicPath: isDev ? '/img/' : '/elit-test/img/',
           outputPath: 'img/',
         },
       },
